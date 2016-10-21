@@ -4,7 +4,7 @@ namespace Kahlan\Spec\Suite;
 use stdClass;
 use Exception;
 use Kahlan\Suite;
-use Kahlan\Specification;
+use Kahlan\Structure\Specification;
 use Kahlan\Matcher;
 use Kahlan\Plugin\Double;
 
@@ -12,7 +12,7 @@ describe("Specification", function () {
 
     beforeEach(function () {
 
-        $this->spec = new Specification(['closure' => function () {}]);
+        $this->spec = new Specification();
 
     });
 
@@ -186,10 +186,10 @@ describe("Specification", function () {
 
             it("logs deferred matcher backtrace", function () {
 
-                $root = new Suite();
-                $root->backtraceFocus(['*Spec.php', '*.spec.php']);
+                $suite = new Suite();
+                $suite->backtraceFocus(['*Spec.php', '*.spec.php']);
                 $this->spec = new Specification([
-                    'parent'  => $root,
+                    'suite'  => $suite,
                     'closure' => function () {
                         $this->expect(Double::instance())->not->toReceive('helloWorld');
                     }

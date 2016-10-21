@@ -6,6 +6,8 @@ use Kahlan\Analysis\Debugger;
 use Kahlan\Analysis\Inspector;
 use Kahlan\Code\Code;
 use Kahlan\Code\TimeoutException;
+use Kahlan\Structure\Specification;
+
 use Closure;
 
 /**

@@ -5,7 +5,7 @@ use Exception;
 use RuntimeException;
 use stdClass;
 use DateTime;
-use Kahlan\Specification;
+use Kahlan\Structure\Specification;
 use Kahlan\Matcher;
 use Kahlan\Expectation;
 use Kahlan\Plugin\Double;
